@@ -19,6 +19,7 @@ class TestClassDemo:
         server = BaseRequest(config['gHub']['default'], url, data=data['data'])
         result = server.post()
         allure.attach(name='接口的返回结果', body=result.response_text)
+        log.info("this is a test log")
         assert result.response_json['code'] == "500"
 
     @allure.title("成功用例")
