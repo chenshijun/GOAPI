@@ -22,9 +22,9 @@ def run_test():
 if __name__ == '__main__':
     if len(sys.argv) > 1:
         report_path = sys.argv[1]
-        set_allure_report_title(report_path + "/html", {"reportName": "第一版本"})
-        set_allure_environment(report_path + "/html")
-        set_allure_logo(report_path + "/html")
-        set_allure_logo_text(report_path + "/html", "API")
+        set_allure_report_title(report_path, {"reportName": "第一版本"})
+        set_allure_environment(report_path)
+        set_allure_logo(report_path)
+        set_allure_logo_text(report_path, "API")
     else:
         run_test()
