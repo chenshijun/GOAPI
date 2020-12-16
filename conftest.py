@@ -1,6 +1,6 @@
 import pytest
 from pytest_testconfig import load_ini, config
-from util.Properties import Properties
+# from util.Properties import Properties
 import os
 
 currentPath = os.path.dirname(os.path.abspath(__file__))
@@ -25,6 +25,6 @@ def env(request):
         for file in files:
             if '.ini' in file:
                 load_ini(ini_file=os.path.join(path, file), encoding='utf8')
-    props = Properties("./report/environment.properties")
-    props.put("test_environment", running_env)
+    # props = Properties("./report/environment.properties")
+    # props.put("test_environment", running_env)
     return running_env
