@@ -71,6 +71,7 @@ def set_allure_logo(path):
                 line = line.replace(bs64_str + ") no-repeat 0",
                                     image + ") no-repeat 0; background-size: 45px 50px !important;")
             file_data += line
+        file_data += ".node__parameters{display: none}"
     with open(file, "w", encoding="utf-8") as f:
         f.write(file_data)
 
@@ -83,7 +84,6 @@ def set_allure_logo_text(path, text):
     with open(file, "r", encoding="utf-8") as f:
         for line in f:
             if logo_text in line:
-                print(111)
                 line = line.replace(logo_text, new_test)
             file_data += line
     with open(file, "w", encoding="utf-8") as f:
