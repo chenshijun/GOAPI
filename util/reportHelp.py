@@ -13,7 +13,7 @@ def get_json_data(json_path, value):
 
 
 def set_allure_report_title(report_path, value):
-    path = report_path + "/html/widgets/summary.json"
+    path = report_path + "/widgets/summary.json"
     if os.path.exists(path):
         data = get_json_data(path, value)
         with open(path, 'w') as r:
@@ -24,7 +24,7 @@ def set_allure_report_title(report_path, value):
 
 
 def set_allure_environment(report_path):
-    path = report_path + "/html/widgets/environment.json"
+    path = report_path + "/widgets/environment.json"
     if os.path.exists(path):
         with open(path, 'w') as r:
             data = [{
@@ -59,7 +59,7 @@ def img2base64(image_bytes):
 
 def set_allure_logo(path):
     image = "data:image/jpg;base64," + img2base64("./report/logo.png")
-    file = path + "/html/styles.css"
+    file = path + "/styles.css"
     file_data = ""
     with open(file, "r", encoding="utf-8") as f:
         for line in f:
@@ -76,7 +76,7 @@ def set_allure_logo(path):
 
 
 def set_allure_logo_text(path, text):
-    file = path + "/html/app.js"
+    file = path + "/app.js"
     file_data = ""
     logo_text = """<span class="'+l(__default(n(6)).call(s,"side-nav","brand-text",{name:"b",hash:{},data:a}))+'">Allure</span>"""
     new_test = """<span class="'+l(__default(n(6)).call(s,"side-nav","brand-text",{name:"b",hash:{},data:a}))+'">""" + text + "</span>"
