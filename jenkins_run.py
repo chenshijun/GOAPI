@@ -5,6 +5,7 @@ import time
 import pytest
 
 currentPath = os.path.dirname(os.path.abspath(__file__))
+print(currentPath)
 
 
 def run_test():
