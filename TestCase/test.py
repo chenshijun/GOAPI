@@ -13,14 +13,14 @@ log = Logger().get_log()
 class TestClassDemo:
 
     @pytest.mark.parametrize('url', get_url())
-    @pytest.mark.parametrize('data', get_data())
-    @allure.story("{data['desc']}")
+    @pytest.mark.parametrize('data', get_data(), ids=[])
+    @allure.title("{data[desc]}")
     def test_api(self, url, data):
         server = BaseRequest(config['gHub']['default'], url, data=data['data'])
         result = server.post()
         allure.attach(name='接口的返回结果', body=result.response_text)
         assert result.response_json['code'] == "500"
 
-    @allure.story("成功用例")
+    @allure.title("成功用例")
     def test_info(self):
         assert True
